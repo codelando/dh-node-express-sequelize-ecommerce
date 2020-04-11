@@ -1,6 +1,6 @@
-# Ejemplo de Proyecto Integrador
+# StickerLizard
 
-## StickerLizard
+*Ejemplo de Proyecto Integrador*
 
 Ecommerce de venta de stikers relacionados a la programación y temas afines. 
 
@@ -22,7 +22,7 @@ Durante nuestro proceso de investigación buscamos sitios con temáticas afines 
 - https://www.carbonbeauty.com/ (Estética)
 - https://www.othr.com/ (Estética)
 
-# Tecnologías
+## Tecnologías
 
 - Node
 - Express
