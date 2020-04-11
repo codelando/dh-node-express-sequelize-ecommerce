@@ -1,6 +1,6 @@
 # StickerLizard
 
-*Ejemplo de Proyecto Integrador*
+(*Ejemplo de Proyecto Integrador*)
 
 Ecommerce de venta de stikers relacionados a la programación y temas afines. 
 
@@ -10,7 +10,7 @@ Orientado a todas aquellas personas que quieran mostrar las tecnologías que dom
 
 - **Ezequiel Cortés** docente y desarrollador fullstack. Líder técnico y explicador profesional.
 
-- **Code Lando** alter ego. Carpintero amateur y breackdancer aficionado.
+- **Code Lando** alter ego. Carpintero amateur y breakdancer aficionado.
 
 ## Referentes
 
