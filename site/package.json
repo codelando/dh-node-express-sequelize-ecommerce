@@ -1,0 +1,16 @@
+{
+  "name": "node-ecommerce",
+  "version": "1.0.0",
+  "description": "Ecommerce simple utilizando Node, Express y React",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "startdev": "npx nodemon src/app.js -e js,ejs,css"
+  },
+  "author": "Ezequiel Cortés",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "express": "^4.17.1"
+  }
+}

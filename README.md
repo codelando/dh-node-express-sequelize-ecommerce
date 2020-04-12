@@ -1,4 +1,4 @@
-# StickerLizard
+# Sticker Wizard
 
 (*Ejemplo de Proyecto Integrador*)
 
@@ -26,4 +26,15 @@ Durante nuestro proceso de investigación buscamos sitios con temáticas afines 
 
 - Node
 - Express
-- EJS
+
+- Chalk
+
+### Frontend
+
+- Font Awesome
+- Google Fonts
+- Coolors
+
+## Tablero de trabajo
+
+https://trello.com/b/mDz4bKmd/proyecto-integradors
