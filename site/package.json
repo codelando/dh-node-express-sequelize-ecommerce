@@ -5,12 +5,15 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "startdev": "npx nodemon src/app.js -e js,ejs,css"
+    "startdev": "nodemon src/app.js -e js,ejs,css"
   },
   "author": "Ezequiel Cortés",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.0.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
