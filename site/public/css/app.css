@@ -147,11 +147,20 @@ select { width: 100%; }
 
 /* Imágenes */
 
+figure { margin: 0; }
+
 .image img {
     display: block;
     width: 100%;
     height: auto;
 }
+
+/* Componentes */
+
+/* Card */
+.card {}
+.card .card-image {}
+.card .card-content {}
 
 /* ----------------- */
 /* Estilos generales */
@@ -230,9 +239,21 @@ footer h3 { text-align: center; }
 /* Listado de productos */
 .product-list {}
     .product { }
-        .product img { width: 100%;}
+        .product .card {
+            position: relative; 
+        }
+        .product .card:hover .card-content { opacity: 1; }
+        .product .card .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            background-color: #eee;
+            padding: 0 0.5em;
+            transition: all .3s ease-out;
+        }
 
-    
 /* Listado de carrito */
 .cart-list .columns:not(:last-child) {
     border-bottom: 1px solid var(--lightgray);
