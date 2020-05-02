@@ -1,9 +1,10 @@
 const express = require('express');
+const controller = require('../controllers/productController');
 const router = express.Router();
 
-router.get('/detail', (req, res) => {
-    res.render('products/detail');
-});
+router.get('/', controller.index);
+
+router.get('/:id', controller.show);
 
 router.get('/cart', (req, res) => {
     res.render('products/cart');

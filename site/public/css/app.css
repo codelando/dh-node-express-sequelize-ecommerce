@@ -7,14 +7,16 @@
 /* https://coolors.co/f4cd58-a5b56c-5b9fd3-aa8080-f48758 */
 
 :root {
-    --lightgray: #ccc;
-    --darkgray: #333;
+    --light: #ccc;
+    --dark: #333;
 
     --yellow: #f4c73f;
     --green: #a2b55a;
     --blue: #4596d3;
     --purple: #aa6f6f;
     --orange: #f4753f;
+
+    --primary: var(--orange);
 
     --soft-yellow: #f4cd58;
     --soft-green: #a5b56c;
@@ -106,7 +108,7 @@ input,
 textarea,
 select,
 button {
-    border: 1px solid var(--lightgray);
+    border: 1px solid var(--light);
     padding: var(--default-padding);
 }
 
@@ -145,6 +147,8 @@ select { width: 100%; }
 .feedback.is-warning { color: var(--warning-color); }
 .feedback.is-danger { color: var(--danger-color); }
 
+/* Elementos */
+
 /* Imágenes */
 
 figure { margin: 0; }
@@ -154,6 +158,27 @@ figure { margin: 0; }
     width: 100%;
     height: auto;
 }
+
+/* Etiquetas */
+
+.tag { 
+    display: inline-block;
+    padding: .25rem .5rem;
+    font-size: .8rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags .tag {
+    margin-right: .5rem;
+}
+
 
 /* Componentes */
 
@@ -256,7 +281,7 @@ footer h3 { text-align: center; }
 
 /* Listado de carrito */
 .cart-list .columns:not(:last-child) {
-    border-bottom: 1px solid var(--lightgray);
+    border-bottom: 1px solid var(--light);
 }
 
 .cart-list .cart-item:hover {
