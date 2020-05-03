@@ -7,6 +7,7 @@
 /* https://coolors.co/f4cd58-a5b56c-5b9fd3-aa8080-f48758 */
 
 :root {
+    --white: white;
     --light: #ccc;
     --dark: #333;
 
@@ -104,28 +105,47 @@
 
 /* Formularios */
 
+.form.is-inline { display: inline-block; }
+
 input,
 textarea,
 select,
-button {
+button,
+.button {
     border: 1px solid var(--light);
     padding: var(--default-padding);
+    background-color: var(--white);
 }
 
 input.is-success,
 textarea.is-success,
 select.is-success,
-button.is-success { border-color: var(--success-color);}
+button.is-success,
+.button.is-success { border-color: var(--success-color);}
 
 input.is-warning,
 textarea.is-warning,
 select.is-warning,
-button.is-warning { border-color: var(--warning-color);}
+button.is-warning,
+.button.is-warning { border-color: var(--warning-color);}
 
 input.is-danger,
 textarea.is-danger,
 select.is-danger,
-button.is-danger { border-color: var(--danger-color);}
+button.is-danger,
+.button.is-danger { border-color: var(--danger-color);}
+
+.button { 
+    display: inline-block; 
+    cursor: pointer;
+}
+
+.buttons { 
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.buttons .button { margin-right: var(--default-margin);}
 
 input,
 textarea,
@@ -176,7 +196,7 @@ figure { margin: 0; }
 }
 
 .tags .tag {
-    margin-right: .5rem;
+    margin-right: var(--default-margin);
 }
 
 
@@ -239,6 +259,19 @@ a {
             padding: 1rem;
             text-transform: uppercase;
         }
+
+        .main-nav .nav-menu a:hover {
+            border-bottom: .5rem solid var(--light);
+        }
+
+        body.home .main-nav .menu-home,
+        body.products .main-nav .menu-products,
+        body.product-new .main-nav .menu-product-new,
+        body.login .main-nav .menu-login,
+        body.register .main-nav .menu-register {
+            border-bottom: .5rem solid var(--primary);
+        }
+
     .main-nav .nav-cart {
         text-align: right;
         width: 25%;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %> 
-<body>
+<body class="product-new">
     <%- include('../partials/header') %> 
     <main>
         <div class="container">
@@ -9,7 +9,7 @@
                 <div class="columns is-centered">
                     <div class="column is-6">
                         <h1>Nuevo producto</h1>
-                        <form action="">
+                        <form action="/products" method="POST" enctype="multipart/form-data">
 
                             <div class="field">
                                 <label for="name">Nombre</label>
@@ -32,6 +32,29 @@
                                 <div class="control">
                                     <input type="text" name="price">
                                 </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="image">Imagen</label>
+                                <div class="control">
+                                    <input type="file" name="image">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="thematic">Temática</label>
+                                <div class="control">
+                                    <input type="text" name="thematic">
+                                </div>
+                                <p class="feedback"></p>
+                            </div>
+
+                            <div class="field">
+                                <label for="keywords">Etiquetas</label>
+                                <div class="control">
+                                    <input type="text" name="keywords">
+                                </div>
+                                <p class="feedback"></p>
                             </div>
 
                             <div class="field">
