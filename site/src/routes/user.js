@@ -11,6 +11,8 @@ router.get('/login', guestRoute, controller.login);
 
 router.post('/login', guestRoute, controller.autenticate);
 
+router.get('/logout', controller.logout);
+
 router.get('/profile', userRoute, controller.profile);
 
 router.post('/', controller.store);

@@ -1,6 +1,8 @@
 const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
 const jsonDb = require('../database/jsonDatabase');
 const userModel = jsonDb('users');
+const userTokenModel = jsonDb('usersTokens');
 
 module.exports = {
     profile: (req, res) => {
@@ -41,6 +43,19 @@ module.exports = {
 
                 req.session.user = user;
 
+                // Si pidió que recordar
+                if (req.body.remember) {
+                    // Generamos un token seguro, eso para que no pueda entrar cualquiera
+                    // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
+                    const token = crypto.randomBytes(64).toString('base64');
+
+                    // Lo guardamos en nuestra base, para poder chequearlo luego
+                    userTokenModel.create({userId: user.id, token})
+
+                    // Recordamos al usuario por 3 meses         msegs  segs  mins  hs   días
+                    res.cookie('rememberToken', token, { maxAge: 1000 * 60  * 60 *  24 * 90 });
+                }
+
                 return res.redirect('/users/profile')
             } else {
                 return res.render('users/login', {errors: [{email: 'el usuario o la contraseña son inválidos' }]}); 
@@ -48,5 +63,19 @@ module.exports = {
         } else {
             return res.render('users/login', {errors: [{email: 'el usuario o la contraseña son inválidos' }]});
         }
+    },
+    logout: (req, res) => {
+        // Borramos el registro de la base de datos si existe
+        let token = userTokenModel.findByField('token', req.cookies.rememberToken);
+        if (token) {
+            userTokenModel.delete(token.id);
+        }
+
+        // Destruimos la sesión
+        req.session.destroy();
+        // Destruimos la cookie de recordar
+        res.cookie('rememberToken', null, { maxAge: -1 });
+        // Redirigimos a la home
+        res.redirect('/')
     }
 }

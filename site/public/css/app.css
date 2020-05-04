@@ -147,7 +147,7 @@ button.is-danger,
 
 .buttons .button { margin-right: var(--default-margin);}
 
-input,
+input:not([type='checkbox']):not([type='radio']),
 textarea,
 select { width: 100%; }
 

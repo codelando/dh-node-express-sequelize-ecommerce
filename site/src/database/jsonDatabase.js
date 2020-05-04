@@ -6,7 +6,11 @@ const model = function (name) {
         tablePath: path.resolve(__dirname, '../data/', `${name}.json`),
         readFile() {
             let tableContents = fs.readFileSync(this.tablePath, 'utf-8');
-            return JSON.parse(tableContents) || [];
+            
+            if (tableContents) {
+                return JSON.parse(tableContents);
+            }
+            return [];
         },
         writeFile(contents) {
             let tableContents = JSON.stringify(contents, null, ' ');
@@ -16,7 +20,11 @@ const model = function (name) {
             let rows = this.readFile();
             let lastRow = rows.pop();
 
-            return lastRow.id ? ++lastRow.id : 1;
+            if (lastRow) {
+                return ++lastRow.id;
+            }
+            
+            return 1;
         },
         all() {
             return this.readFile();
