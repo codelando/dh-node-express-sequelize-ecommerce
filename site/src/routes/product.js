@@ -2,15 +2,17 @@ const express = require('express');
 const controller = require('../controllers/productsController');
 const router = express.Router();
 
+const userRoute = require('../middlewares/userRoute');
+
 router.get('/', controller.index);
 
-router.get('/register', controller.create);
+router.get('/create', userRoute, controller.create);
+
+router.post('/', userRoute, controller.store);
 
 router.get('/cart', (req, res) => {
     res.render('products/cart');
 });
-
-router.post('/', controller.store);
 
 router.get('/:id', controller.show);
 
