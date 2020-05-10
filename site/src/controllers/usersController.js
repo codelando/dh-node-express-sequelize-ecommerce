@@ -15,11 +15,13 @@ module.exports = {
         // Generamos el usuario a partir de los datos del request
         // - Ignoramos repassword
         // - Hasheamos la contraseña
-        // - La categoría será siempre 'user' para el registro normal
+        // - La categoría será siempre 'user' para el registro normal       
+
         user = {
             firstName:req.body.firstName,
             lastName: req.body.lastName,
             email:req.body.email,
+            image: req.file ? req.file.filename : '',
             password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10)),
             category: 'user'
         };

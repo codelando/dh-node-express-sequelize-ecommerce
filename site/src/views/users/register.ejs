@@ -9,7 +9,7 @@
                 <div class="columns is-centered">
                     <div class="column is-6">
                         <h1>Registro</h1>
-                        <form action="/users" method="POST">
+                        <form action="/users" method="POST" enctype="multipart/form-data">
                             <div class="columns">
                                 <div class="column is-6">
                                     <div class="field">
@@ -36,6 +36,12 @@
                                     <input type="text" name="email">
                                 </div>
                                 <p class="feedback"></p>
+                            </div>
+                            <div class="field">
+                                <label for="image">Imagen</label>
+                                <div class="control">
+                                    <input type="file" name="image" id="image">
+                                </div>
                             </div>
                             <div class="field">
                                 <label for="email">Contraseña</label>

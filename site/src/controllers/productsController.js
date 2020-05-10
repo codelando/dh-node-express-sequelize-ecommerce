@@ -19,6 +19,7 @@ module.exports = {
     },
     store: (req, res) => {
         product = req.body;
+        product.image = req.file ? req.file.filename : '';
         product.keywords = product.keywords.split(' ');
         
         productId = productModel.create(req.body);
