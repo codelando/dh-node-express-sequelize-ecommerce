@@ -56,12 +56,12 @@ module.exports = {
                     res.cookie('rememberToken', token, { maxAge: 1000 * 60  * 60 *  24 * 90 });
                 }
 
-                return res.redirect('/users/profile')
+                return res.redirect('/users/profile');
             } else {
-                return res.render('users/login', {errors: [{email: 'el usuario o la contraseña son inválidos' }]}); 
+                return res.render('users/login', {errors: {email: 'el usuario o la contraseña son inválidos' }, old: req.body}); 
             }
         } else {
-            return res.render('users/login', {errors: [{email: 'el usuario o la contraseña son inválidos' }]});
+            return res.render('users/login', {errors: {email: 'el usuario o la contraseña son inválidos' }, old: req.body });
         }
     },
     logout: (req, res) => {
