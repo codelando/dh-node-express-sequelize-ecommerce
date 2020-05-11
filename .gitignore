@@ -2,3 +2,4 @@ node_modules
 site/src/data
 site/public/images/products
 site/public/images/users
+site/src/database/config/config.js
