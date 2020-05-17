@@ -1,9 +1,12 @@
-const jsonDb = require('../database/jsonDatabase');
-const productModel = jsonDb('products');
+const db = require('../database/models');
 
 module.exports = {
     index: (req, res) => {
-        let products = productModel.all();
-        res.render('index/index', { products });
+        db.product
+            .findAll()
+            .then(products => {
+                res.render('products/index', { products });
+            })
+            .catch(error => console.log(error));
     }
 }

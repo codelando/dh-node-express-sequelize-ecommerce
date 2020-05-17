@@ -17,8 +17,8 @@
                         <h2>$ <%= product.price %></h2>
                         <p><%= product.description %></p>
                         <p class="tags">
-                            <% product.keywords.forEach((keyword) => { %> 
-                                <span class="tag"><%= keyword %> </span>
+                            <% product.tags.forEach((tag) => { %> 
+                                <span class="tag"><%= tag.name %> </span>
                             <%}) %>
                         </p>
                         <form action="">

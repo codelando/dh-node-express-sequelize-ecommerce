@@ -7,15 +7,6 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const auth = require('./middlewares/auth');
 
-// Sesiones y autenticación
-app.use(session({
-    secret: 'sticker wizzard',
-    resave: false,
-    saveUninitialized: true,
-}));
-app.use(cookieParser());
-app.use(auth);
-
 // Motor de vistas
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -24,6 +15,15 @@ app.set('views', 'src/views');
 // Formularios
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+
+// Sesiones y autenticación
+app.use(session({
+    secret: 'sticker wizzard',
+    resave: false,
+    saveUninitialized: true,
+}));
+app.use(cookieParser());
+app.use(auth);
 
 // Rutas
 app.get('/', require('./controllers/indexController').index);

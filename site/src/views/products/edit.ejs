@@ -43,17 +43,23 @@
                             </div>
 
                             <div class="field">
-                                <label for="thematic">Temática</label>
+                                <label for="thematicId">Temática</label>
                                 <div class="control">
-                                    <input type="text" name="thematic" value="<%= locals.product ? product.thematic : '' %>">
+                                    <select name="thematicId">
+                                        <option value="">Seleccione una temática</option>   
+                                        <% thematics.forEach(thematic => { %>
+                                            <option value="<%= thematic.id %>" 
+                                                <%= locals.product && product.thematicId == thematic.id ? 'selected' : '' %>><%= thematic.name %></option>
+                                        <% }) %> 
+                                    </select>
                                 </div>
                                 <p class="feedback"></p>
                             </div>
 
                             <div class="field">
-                                <label for="keywords">Etiquetas</label>
+                                <label for="tags">Etiquetas</label>
                                 <div class="control">
-                                    <input type="text" name="keywords" value="<%= locals.product ? product.keywords : '' %>">
+                                    <input type="text" name="tags" value="<%= locals.product ? product.tags.reduce((a, tag) => { return a + " " + tag.name }, '') : '' %>">
                                 </div>
                                 <p class="feedback"></p>
                             </div>

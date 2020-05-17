@@ -42,17 +42,22 @@
                             </div>
 
                             <div class="field">
-                                <label for="thematic">Temática</label>
+                                <label for="thematicId">Temática</label>
                                 <div class="control">
-                                    <input type="text" name="thematic" id="thematic">
+                                    <select name="thematicId">
+                                        <option value="">Seleccione una temática</option>   
+                                        <% thematics.forEach(thematic => { %>
+                                            <option value="<%= thematic.id %>"><%= thematic.name %> </option>
+                                        <% }); %> 
+                                    </select>
                                 </div>
                                 <p class="feedback"></p>
                             </div>
 
                             <div class="field">
-                                <label for="keywords">Etiquetas</label>
+                                <label for="tags">Etiquetas</label>
                                 <div class="control">
-                                    <input type="text" name="keywords" id="keywords">
+                                    <input type="text" name="tags" id="tags">
                                 </div>
                                 <p class="feedback"></p>
                             </div>
